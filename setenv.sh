@@ -8,10 +8,7 @@ if ! [ -f ./setenv.sh ]; then
 fi
 
 export PORT_ROOT="${PWD}"
-unset PORT_TARBALL
-unset PORT_GIT
-#export PORT_TARBALL="Y"
-export PORT_GIT="Y"
+export PORT_TYPE="TARBALL"
 export PORT_TARBALL_URL="https://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz"
 export PORT_TARBALL_DEPS="curl gzip make m4 perl autoconf"
 
@@ -20,3 +17,7 @@ export PORT_GIT_DEPS="git make m4 perl autoconf automake help2man makeinfo xz"
 
 export PORT_EXTRA_CFLAGS=""
 export PORT_EXTRA_LDFLAGS=""
+
+if [ "${PORT_TYPE}x" = "TARBALLx" ]; then
+	export PORT_BOOTSTRAP=skip
+fi
