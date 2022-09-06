@@ -18,6 +18,6 @@ fi
 
 zopen_check_results()
 {
-  return 3
+  return 3 # non-functional
 }
 
