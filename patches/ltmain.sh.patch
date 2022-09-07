@@ -1,0 +1,34 @@
+diff --git a/libltdl/config/ltmain.sh b/libltdl/config/ltmain.sh
+index 3061e3c..261b2ff 100644
+--- a/libltdl/config/ltmain.sh
++++ b/libltdl/config/ltmain.sh
+@@ -1243,17 +1243,18 @@ func_lalib_p ()
+ # fatal anyway.  Works if `file' does not exist.
+ func_lalib_unsafe_p ()
+ {
+-    lalib_p=no
+-    if test -f "$1" && test -r "$1" && exec 5<&0 <"$1"; then
+-	for lalib_p_l in 1 2 3 4
+-	do
+-	    read lalib_p_line
+-	    case "$lalib_p_line" in
+-		\#\ Generated\ by\ *$PACKAGE* ) lalib_p=yes; break;;
+-	    esac
+-	done
+-	exec 0<&5 5<&-
+-    fi
++# msf - temporary hack
++    lalib_p=yes
++#    if test -f "$1" && test -r "$1" && exec 5<&0 <"$1"; then
++#	for lalib_p_l in 1 2 3 4
++#	do
++#	    read lalib_p_line
++#	    case "$lalib_p_line" in
++#		\#\ Generated\ by\ *$PACKAGE* ) lalib_p=yes; break;;
++#	    esac
++#	done
++#	exec 0<&5 5<&-
++#    fi
+     test "$lalib_p" = yes
+ }
+ 
