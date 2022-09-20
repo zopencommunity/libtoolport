@@ -21,3 +21,9 @@ zopen_check_results()
   return 3 # non-functional
 }
 
+zopen_append_to_env()
+{
+  cat <<EOF
+export ACLOCAL_PATH="\${PWD}/share/aclocal:\$ACLOCAL_PATH"
+EOF
+}
