@@ -18,7 +18,16 @@ fi
 
 zopen_check_results()
 {
-  return 3 # non-functional
+    chk="$2_check.log"
+
+    totalTests=$(egrep "PASS:|FAIL:" *_check.log | cut -f1 -d " "| wc -w)
+    failures=$(egrep "FAIL:" *_check.log | cut -f1 -d " " | wc -w)
+
+    cat <<TEST
+actualFailures:$failures
+totalTests:$totalTests
+expectedFailures:0
+TEST
 }
 
 zopen_append_to_env()
