@@ -4,10 +4,10 @@
 #
 export ZOPEN_TYPE="TARBALL"
 export ZOPEN_TARBALL_URL="https://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz"
-export ZOPEN_TARBALL_DEPS="curl gzip make m4 perl autoconf"
+export ZOPEN_TARBALL_DEPS="curl gzip make m4 perl autoconf coreutils"
 
 export ZOPEN_GIT_URL="https://github.com/autotools-mirror/libtool.git"
-export ZOPEN_GIT_DEPS="git make m4 perl autoconf automake help2man makeinfo xz"
+export ZOPEN_GIT_DEPS="git make m4 perl autoconf automake help2man makeinfo xz coreutils"
 
 export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
