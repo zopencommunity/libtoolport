@@ -19,8 +19,8 @@ zopen_check_results()
 {
     chk="$1/$2_check.log"
 
-    totalTests=$(egrep "PASS:|FAIL:" *_check.log | cut -f1 -d " "| wc -w)
-    failures=$(egrep "FAIL:" *_check.log | cut -f1 -d " " | wc -w)
+    totalTests=$(egrep "PASS:|FAIL:" $chk | cut -f1 -d " "| wc -w)
+    failures=$(egrep "FAIL:" $chk | cut -f1 -d " " | wc -w)
 
     cat <<TEST
 actualFailures:$failures
