@@ -1,4 +1,3 @@
-#!/bin/sh
 #
 # Set up environment variables for general build tool to operate
 #
@@ -18,7 +17,7 @@ fi
 
 zopen_check_results()
 {
-    chk="$2_check.log"
+    chk="$1/$2_check.log"
 
     totalTests=$(egrep "PASS:|FAIL:" *_check.log | cut -f1 -d " "| wc -w)
     failures=$(egrep "FAIL:" *_check.log | cut -f1 -d " " | wc -w)
