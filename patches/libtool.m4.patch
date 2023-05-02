@@ -1,0 +1,15 @@
+diff --git a/libltdl/m4/libtool.m4 b/libltdl/m4/libtool.m4
+index d812584..f959bae 100644
+--- a/libltdl/m4/libtool.m4
++++ b/libltdl/m4/libtool.m4
+@@ -3127,6 +3127,10 @@ aix[[4-9]]*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
++openedition)
++  lt_cv_deplibs_check_method=pass_all
++  ;;
++
+ beos*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
