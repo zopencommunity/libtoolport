@@ -1,17 +1,17 @@
-#
-# Set up environment variables for general build tool to operate
-#
-export ZOPEN_TYPE="TARBALL"
-export ZOPEN_TARBALL_URL="https://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz"
-export ZOPEN_TARBALL_DEPS="curl gzip make m4 perl autoconf coreutils zoslib"
+# bump: libtool-version /LIBTOOL_VERSION="(.*)"/ https://ftp.gnu.org/gnu/libtool/|re:/libtool-([\d.]+).tar.gz/$1/|semver:*
+LIBTOOL_VERSION="2.4"
 
-export ZOPEN_GIT_URL="https://github.com/autotools-mirror/libtool.git"
-export ZOPEN_GIT_DEPS="git make m4 perl autoconf automake help2man texinfo xz coreutils zoslib"
+export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/libtool/libtool-${LIBTOOL_VERSION}.tar.gz"
+export ZOPEN_STABLE_DEPS="curl gzip make m4 perl autoconf coreutils zoslib"
+
+export ZOPEN_DEV_URL="https://github.com/autotools-mirror/libtool.git"
+export ZOPEN_DEV_DEPS="git make m4 perl autoconf automake help2man texinfo xz coreutils zoslib"
 
 export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
 
-if [ "${ZOPEN_TYPE}x" = "TARBALLx" ]; then
+if [ "${ZOPEN_BUILD_LINE}x" = "STABLEx" ]; then
 	export ZOPEN_BOOTSTRAP=skip
 fi
 
