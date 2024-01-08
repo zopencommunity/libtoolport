@@ -11,6 +11,7 @@ export ZOPEN_DEV_DEPS="git make m4 perl autoconf automake help2man texinfo xz co
 
 export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
+export ZOPEN_CHECK_TIMEOUT=72000 # 20 hours
 
 if [ "${ZOPEN_BUILD_LINE}x" = "STABLEx" ]; then
 	export ZOPEN_BOOTSTRAP=skip
