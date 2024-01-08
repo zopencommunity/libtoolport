@@ -1,9 +1,9 @@
 diff --git a/configure b/configure
-index 7e8f3da..5481c38 100755
+index faba8d7..6f2a9c2 100755
 --- a/configure
 +++ b/configure
-@@ -11277,6 +11277,17 @@ openbsd*)
-   fi
+@@ -12547,6 +12547,17 @@ openbsd* | bitrig*)
+   shlibpath_overrides_runpath=yes
    ;;
  
 +i370-ibm-openedition*)
@@ -19,4 +19,4 @@ index 7e8f3da..5481c38 100755
 +
  os2*)
    libname_spec='$name'
-   shrext_cmds=".dll"
+   version_type=windows
