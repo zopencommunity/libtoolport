@@ -1,15 +1,17 @@
 # bump: libtool-version /LIBTOOL_VERSION="(.*)"/ https://ftp.gnu.org/gnu/libtool/|re:/libtool-([\d.]+).tar.gz/$1/|semver:*
-LIBTOOL_VERSION="2.4"
+LIBTOOL_VERSION="2.4.7"
 
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/libtool/libtool-${LIBTOOL_VERSION}.tar.gz"
-export ZOPEN_STABLE_DEPS="curl gzip make m4 perl autoconf coreutils zoslib"
+#export ZOPEN_STABLE_DEPS="curl gzip make m4 perl autoconf coreutils zoslib"
+export ZOPEN_STABLE_DEPS="git make m4 perl autoconf automake help2man texinfo xz coreutils zoslib"
 
 export ZOPEN_DEV_URL="https://github.com/autotools-mirror/libtool.git"
 export ZOPEN_DEV_DEPS="git make m4 perl autoconf automake help2man texinfo xz coreutils zoslib"
 
 export ZOPEN_EXTRA_CFLAGS=""
 export ZOPEN_EXTRA_LDFLAGS=""
+export ZOPEN_CHECK_TIMEOUT=72000 # 20 hours
 
 if [ "${ZOPEN_BUILD_LINE}x" = "STABLEx" ]; then
 	export ZOPEN_BOOTSTRAP=skip
