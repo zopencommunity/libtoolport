@@ -1,5 +1,5 @@
 # bump: libtool-version /LIBTOOL_VERSION="(.*)"/ https://ftp.gnu.org/gnu/libtool/|re:/libtool-([\d.]+).tar.gz/$1/|semver:*
-LIBTOOL_VERSION="2.4"
+LIBTOOL_VERSION="2.5.4"
 
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://ftp.gnu.org/gnu/libtool/libtool-${LIBTOOL_VERSION}.tar.gz"
